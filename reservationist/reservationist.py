@@ -141,8 +141,8 @@ if __name__ == "__main__":
         conn = EC2_Account_Connection(aws_access_id=account['access_id'],
                                       aws_secret_key=account['secret_key'],
                                       regions=config.REGIONS)
-        running = conn.get_instances(age_filter=7)
-        reserved = conn.get_reservations(offeringType='Heavy Utilization')
+        running = conn.get_instances(age_filter=config.AGE_FILTER)
+        reserved = conn.get_reservations(offeringType=config.OFFERINGTYPE)
         availability_zones |= set(running.keys()) | set(reserved.keys())
         for types in running.itervalues():
             instance_types |= set(types.keys())

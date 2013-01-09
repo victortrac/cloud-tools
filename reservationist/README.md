@@ -4,8 +4,8 @@ With Amazon's Consolidated Billing, a Reserved Instance purchased in one AWS acc
 reservationish.py looks at AWS for currently running instances and active reserved instances over multiple accounts and regions and tells you were you need to buy reservations or, even worse, where you are over-reserved.
 
 Some more information:
-[Consolidated Billing & Reserved Instances](http://docs.amazonwebservices.com/awsaccountbilling/latest/about/consolidatedbilling.html#consolidatedbilling-ec2)
-[Volume Discounts](http://docs.aws.amazon.com/awsaccountbilling/latest/about/consolidatedbilling.html#useconsolidatedbilling-discounts)
+* [Consolidated Billing & Reserved Instances](http://docs.amazonwebservices.com/awsaccountbilling/latest/about/consolidatedbilling.html#consolidatedbilling-ec2)
+* [Volume Discounts](http://docs.aws.amazon.com/awsaccountbilling/latest/about/consolidatedbilling.html#useconsolidatedbilling-discounts)
 
 ##### Defaults:
 * It considers an instance "running" if it was created more than 7 days ago and is currently running
@@ -18,11 +18,12 @@ Some more information:
 
 ### To-Use
 Copy config-sample.py to config.py and edit to suit your needs.
+
     python reservationist.py
 
 Copy output to excel as a CSV and behold.
 
 ### Limitations
-Lots. I hacked this in a couple of hours to do what I needed at the moment. Off of the top of my head:
+Lots. I hacked this in a couple of hours to do what I needed at the moment, but some limitations that come to mind:
 * Only outputs to the screen in an ugly csv manner
 * Doesn't know or care about RDS
