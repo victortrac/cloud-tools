@@ -84,7 +84,7 @@ class EC2_Account_Connection(object):
                 if r.state != 'active':
                     # we don't want to count inactive reservations
                     continue
-                if offeringType and r.offeringType != offeringType:
+                if offeringType and r.offering_type != offeringType:
                     continue
                 _az = r.availability_zone
                 _type = r.instance_type
